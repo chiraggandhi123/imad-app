@@ -1,2 +1,2 @@
-var element = documnet.getElementById('heading')
-element.innerHtml = "New value";
+var element=document.getElementById('heading')
+element.innerHTML='new value' 
