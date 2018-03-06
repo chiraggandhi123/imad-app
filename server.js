@@ -1,7 +1,7 @@
 var express = require('express');//to make server 
 var morgan = require('morgan');//
 var path = require('path');
-
+var counter=0;
 var app = express();
 app.use(morgan('combined'));
 
@@ -31,8 +31,13 @@ app.get('/ui/main.js', function (req, res){
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
+var span = documnet.getElementById('count')
 
-
+var button = document.getElementById('counter');
+button.onclick=function(){
+    counter=counter+1;
+    span.innerHTML = counter.toString('count');
+}
 // Do not change port, otherwise your app won't run on IMAD servers
 // Use 8080 only for local development if you already have apache running on 80
 
