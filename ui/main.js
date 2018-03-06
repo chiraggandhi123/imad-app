@@ -15,5 +15,5 @@ button.onclick=function(){
       }
     };
     request.open('GET','http://chiraggandhi70726.imad.hasura-app.io/counter',true);
-    request.send(null);
+    request.send(NULL);
 };
