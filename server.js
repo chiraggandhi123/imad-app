@@ -21,9 +21,9 @@ app.get('/test-db',function(req,res){
   });  
 });
 
-app.get('/', function (req, res) {
+/*app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html')
-});
+});*/
 app.get('ui/article-one', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
 });
@@ -33,7 +33,7 @@ app.get('/article-two', function (req, res) {
 app.get('/counter',function(req,res){
     counter=counter+1;
     res.send(counter.toString());
-})
+});
 
 app.get('/article-three',function(req,res){
     res.send('article-three');
