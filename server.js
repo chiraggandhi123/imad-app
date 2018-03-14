@@ -2,7 +2,7 @@ var express = require('express');//to make server
 var morgan = require('morgan');//
 var path = require('path');
 var app = express();
-
+var crypto =require('crypto');
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
@@ -15,6 +15,16 @@ app.get('/article-two', function (req, res) {
 app.get('/counter',function(req,res){
     counter=counter+1;
     res.send(counter.toString());
+});
+function hash(input,salt){
+ var hashed = crypto.pbkdf25sync('input','salt',10000,512,'sha12'); 
+return hashed.toString('hex');
+    
+}
+
+app.get('/hash/:input',function(req,res){
+var hashedString = hash(req.params.input);
+res.send('hashedString');
 });
 
 app.get('/article-three',function(req,res){
