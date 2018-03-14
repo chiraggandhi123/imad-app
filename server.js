@@ -2,14 +2,6 @@ var express = require('express');//to make server
 var morgan = require('morgan');//
 var path = require('path');
 var app = express();
-var pool = require('pg').Pool;
-var config = {
-    user:'chiraggandhi70726',
-    datbase: 'chiraggandhi70726',
-    host:'sb.imad.hasura-app.io',
-    port:'5432',
-    password:process.emv.DB_PASSWORD
-};
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
