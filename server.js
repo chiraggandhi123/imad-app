@@ -17,7 +17,7 @@ app.get('/counter',function(req,res){
     res.send(counter.toString());
 });
 function hash(input,salt){
- var hashed = crypto.pbkdf25sync('input','salt',10000,512,'sha12'); 
+ var hashed = crypto.pbkdf25sync(input,salt,10000,512,'sha12'); 
 return hashed.toString('hex');
     
 }
